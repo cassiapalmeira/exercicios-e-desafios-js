@@ -50,6 +50,8 @@ function conferirPalpite() {
     campoPalpite.focus()
 }
 
+envioPalpite.addEventListener('click', conferirPalpite) // Evento
+
 // Função que bloqueia os campos de digitação e submissão de palpites + cria um botão de reinicio
 function configFimDeJogo() {
     campoPalpite.disabled = true
