@@ -12,23 +12,23 @@ function contagem() {
         resposta.innerHTML = 'Contando: <br>'
 
         // convertendo os dados das variáveis para o tipo number
-        let i = Number(ini.value)
-        let f = Number(fim.value)
-        let p = Number(passo.value)
+        let iniCont = Number(ini.value)
+        let fimCont = Number(fim.value)
+        let passoCont = Number(passo.value)
 
         // validação do passo
-        if (p <= 0) {
+        if (passoCont <= 0) {
             window.alert('[ERRO] Passo inválido. Considerando passo 1.')
-            p = 1
+            passoCont = 1
         }
 
         // contagem
-        if (i < f) { // contagem PROGRESSIVA
-            for (var contador = i; contador <= f; contador++) {
+        if (iniCont < fimCont) { // contagem PROGRESSIVA
+            for (var contador = iniCont; contador <= fimCont; contador = contador + passoCont) {
                 resposta.innerHTML += `${contador} \u{1F449}`
             }
         } else { // contagem REGRESSIVA
-            for (var contador = i; contador >= f; contador--) {
+            for (var contador = iniCont; contador >= fimCont; contador = contador - passoCont) {
                 resposta.innerHTML += `${contador} \u{1F449}`
             }
         }
