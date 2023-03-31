@@ -19,7 +19,7 @@ const imageFileAlt = {
 
 
 /* Looping through images */
-for (var i = 0; i <= 4; i++) {
+for (var i = 0; i <= imageFileNames.length; i++) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', 'images/' + imageFileNames[i]);
     newImage.setAttribute('alt', imageFileAlt[imageFileNames[i]]);
