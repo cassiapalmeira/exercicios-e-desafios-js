@@ -18,19 +18,37 @@ h1 {
   margin: 30px;
   font-family: 'Lobster', cursive;
   text-shadow: 5px 0 #232931;
-  font-size: 4rem;
+  font-size: 3.8rem;
   color: #4ECCA3;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: 'Lobster', cursive;
+  color: #ffffff;
+  font-size: 25px;
+  background: #393E46;
+  padding: 10px 20px 10px 20px;
+  border: solid #4ECCA3 4px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #232931;
+  text-decoration: none;
 }
 
 .winnerPara {
   font-family: 'Lobster', cursive;
   text-shadow: 5px 0 #232931;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #4ECCA3;
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #4ECCA3;
   font-family: 'Indie Flower', cursive;
 }
@@ -51,3 +69,5 @@ button {
   display: block;
   margin: auto;
 }
+
+
