@@ -7,7 +7,6 @@
 .dice {
   text-align: center;
   display: inline-block;
-
 }
 
 body {
@@ -27,11 +26,11 @@ h1 {
   -moz-border-radius: 28;
   border-radius: 28px;
   font-family: 'Lobster', cursive;
-  color: #ffffff;
+  color: #4ECCA3;
   font-size: 25px;
   background: #393E46;
   padding: 10px 20px 10px 20px;
-  border: solid #4ECCA3 4px;
+  border: solid #4ECCA3 1px;
   text-decoration: none;
 }
 
@@ -70,4 +69,25 @@ button {
   margin: auto;
 }
 
+/* Media query */
+@media (max-width: 780px) {  
+  img {
+    width: 115px;
+  }
 
+  .dice {
+    margin-right: 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .winnerPara {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

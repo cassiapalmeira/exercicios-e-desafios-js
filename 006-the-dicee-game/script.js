@@ -24,13 +24,25 @@ function roll() {
 
     // vencedor: modifica o título da página
     if (dadoAleatorio1 > dadoAleatorio2) {
-        document.querySelector(".winnerPara").innerHTML = "🚩 Player 1 Wins!"
+        function finalMessage() {
+            let finalTxt = document.querySelector('.winnerPara')
+            finalTxt.innerHTML = "🚩 Player 1 Wins!"
+            
+        }
+        setTimeout(finalMessage, 500) // aplica um delay na mensagem final
 
     } else if (dadoAleatorio2 > dadoAleatorio1) {
-        document.querySelector(".winnerPara").innerHTML = "Player 2 Wins! 🚩"
-
+        function finalMessage() {
+            let finalTxt = document.querySelector('.winnerPara')
+            finalTxt.innerHTML = "Player 2 Wins! 🚩"
+        }
+        setTimeout(finalMessage, 500)
     } else {
-        document.querySelector(".winnerPara").innerHTML = "Draw!"
+        function finalMessage() {
+            let finalTxt = document.querySelector('.winnerPara')
+            finalTxt.innerHTML = "Draw!"
+        }
+        setTimeout(finalMessage, 500)
     }
 
 }
