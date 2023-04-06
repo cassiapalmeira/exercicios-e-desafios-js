@@ -23,23 +23,26 @@ function roll() {
     imagem2.setAttribute('src', imagemAleatoria2)
 
     // vencedor: modifica o título da página
+    let finalTxt = document.querySelector('.winnerPara')
+
     if (dadoAleatorio1 > dadoAleatorio2) {
+        finalTxt.innerHTML = "" // limpa o campo do texto da mensagem final
         function finalMessage() {
-            let finalTxt = document.querySelector('.winnerPara')
             finalTxt.innerHTML = "🚩 Player 1 Wins!"
             
         }
         setTimeout(finalMessage, 500) // aplica um delay na mensagem final
 
     } else if (dadoAleatorio2 > dadoAleatorio1) {
+        finalTxt.innerHTML = ""
         function finalMessage() {
-            let finalTxt = document.querySelector('.winnerPara')
             finalTxt.innerHTML = "Player 2 Wins! 🚩"
         }
         setTimeout(finalMessage, 500)
+
     } else {
+        finalTxt.innerHTML = ""
         function finalMessage() {
-            let finalTxt = document.querySelector('.winnerPara')
             finalTxt.innerHTML = "Draw!"
         }
         setTimeout(finalMessage, 500)
