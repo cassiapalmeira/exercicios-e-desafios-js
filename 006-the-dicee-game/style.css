@@ -72,7 +72,7 @@ button {
 /* Media query */
 @media (max-width: 800px) {  
   .dice {
-    margin-right: 30px;
+    margin-right: 15px;
     padding-top: 40px;
     padding-bottom: 80px;
   }
