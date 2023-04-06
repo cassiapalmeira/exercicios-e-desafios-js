@@ -72,19 +72,19 @@ button {
 /* Media query */
 @media (max-width: 800px) {  
   .dice {
-    margin-right: 40px;
-    padding-top: 60px;
+    margin-right: 30px;
+    padding-top: 40px;
     padding-bottom: 80px;
   }
 
   img {
-    width: 110px;
+    width: 100px;
   }
 
   h1 {
-    font-size: 3.5rem;
-    margin-top: 80px;
-    margin-bottom: 70px;
+    font-size: 3.2rem;
+    margin-top: 50px;
+    margin-bottom: 30px;
   }
 
   .winnerPara {
