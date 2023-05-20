@@ -4,19 +4,57 @@ var gamePattern = []
 
 var userClickedPattern = []
 
-$(".btn").click(function() { // detecta quando algum botão é pressionado 
-    var userChosenColour = $(this).attr("id") // armazena a id do botão pressionado
+level = 0
+
+started = false
+
+// função que detecta quando alguma tecla é pressionada pela primeira vez, para dar início ao jogo
+$(document).keydown(function(){
+    if (!started) {
+        started = true
+        nextSequence()   
+    }
+})
+
+
+// função que detecta quando algum botão é clicado
+$(".btn").click(function() {  
+    var userChosenColour = $(this).attr("id") // armazena a id do botão clicado
     
-    userClickedPattern.push(userChosenColour) // adiciona a id do botão pressionado à array userClickedPattern
+    userClickedPattern.push(userChosenColour) // adiciona a id do botão clicado à array userClickedPattern
 
     // toca um som quando o usuário clica no botão de cor correspondente
     playSound(userChosenColour)
 
     // adiciona um efeito de flash quando o usuário clica no botão
     animatePress(userChosenColour)
+
+    // checa a resposta do usuário
+    checkAnswer(userClickedPattern.length-1)
 })
 
+
+// função que checa o clique / a resposta do usuário vs. a cor gerada aleatoriamente
+function checkAnswer(currentLevel) {
+    if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+        if(userClickedPattern.length === gamePattern.length) {
+            setTimeout(function(){
+                nextSequence()
+            }, 1000)
+        }
+    } else {
+        console.log("wrong")
+    }
+}
+
+// função que cria cor aleatória
 function nextSequence() {
+    userClickedPattern = []
+
+    level++ // cada vez que nextSequence é chamada, aumenta-se o nível
+
+    $("#level-title").text("Level " + level) // atualiza o texto do h1
+
     var randomNumber = Math.floor(Math.random() * 4) // um número aleatório entre 0 e 3 é gerado e armazenado na variável
     
     var randomChosenColour = buttonColours[randomNumber] // seleciona uma das cores da array buttonColours e ela é armazenada na variável
