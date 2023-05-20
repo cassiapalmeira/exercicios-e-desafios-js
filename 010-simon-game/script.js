@@ -9,6 +9,8 @@ $(".btn").click(function() { // detecta quando algum botão é pressionado
     
     userClickedPattern.push(userChosenColour) // adiciona a id do botão pressionado à array userClickedPattern
 
+    // toca um som quando o usuário clica no botão de cor correspondente
+    playSound(userChosenColour)
 })
 
 function nextSequence() {
@@ -20,6 +22,12 @@ function nextSequence() {
 
     $("#" + randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100) // usando jQuery pra selecionar botão com a mesma id de randomChosenColour e, posteriormente, adicionando animação de flash no botão
 
-    var playSound = new Audio("sounds/" + randomChosenColour + ".mp3")
-    playSound.play() // a linha acima adiciona um som correspondente a cor selecionada e nessa linha o som é tocado
+    // toca o som quando é gerada uma cor aleatória
+    playSound(randomChosenColour)
+}
+
+// função que será chamada para tocar um som conforme a cor correspondente
+function playSound(name) {
+    var sound = new Audio("sounds/" + name + ".mp3")
+    sound.play()
 }
