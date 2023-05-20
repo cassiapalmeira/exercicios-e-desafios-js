@@ -11,6 +11,9 @@ $(".btn").click(function() { // detecta quando algum botão é pressionado
 
     // toca um som quando o usuário clica no botão de cor correspondente
     playSound(userChosenColour)
+
+    // adiciona um efeito de flash quando o usuário clica no botão
+    animatePress(userChosenColour)
 })
 
 function nextSequence() {
@@ -30,4 +33,13 @@ function nextSequence() {
 function playSound(name) {
     var sound = new Audio("sounds/" + name + ".mp3")
     sound.play()
+}
+
+// função que, quando chamada, adiciona efeito de flash ao botão
+function animatePress(currentColour) {
+    $("#" + currentColour).addClass("pressed")
+
+    setTimeout(function(){
+        $("#" + currentColour).removeClass("pressed")
+    }, 100)
 }
