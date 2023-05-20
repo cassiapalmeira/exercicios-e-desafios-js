@@ -2,6 +2,15 @@ var buttonColours = ["red", "blue", "green", "yellow"]
 
 var gamePattern = []
 
+var userClickedPattern = []
+
+$(".btn").click(function() { // detecta quando algum botão é pressionado 
+    var userChosenColour = $(this).attr("id") // armazena a id do botão pressionado
+    
+    userClickedPattern.push(userChosenColour) // adiciona a id do botão pressionado à array userClickedPattern
+
+})
+
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4) // um número aleatório entre 0 e 3 é gerado e armazenado na variável
     
