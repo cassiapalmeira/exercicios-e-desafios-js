@@ -34,7 +34,7 @@ $(".btn").click(function() {
 })
 
 
-// função que checa o clique / a resposta do usuário vs. a cor gerada aleatoriamente
+// função que checa o clique / a resposta do usuário vs. a cor gerada aleatoriamente para seguir no jogo ou anunciar "game over"
 function checkAnswer(currentLevel) {
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         if(userClickedPattern.length === gamePattern.length) {
@@ -43,8 +43,25 @@ function checkAnswer(currentLevel) {
             }, 1000)
         }
     } else {
-        console.log("wrong")
+        playSound("wrong")
+
+        $("body").addClass("game-over")
+
+        setTimeout(function(){
+            $("body").removeClass("game-over")
+        }, 200)
+
+        $("h1").text("Game Over! Pressione Qualquer Tecla Para Recomeçar")
+
+        startOver() // chamando função que reinicia o jogo
     }
+}
+
+// função que reinicia o jogo
+function startOver() {
+    level = 0
+    gamePattern = []
+    started = false
 }
 
 // função que cria cor aleatória
